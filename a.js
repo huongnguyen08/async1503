@@ -5,4 +5,4 @@ setTimeout(()=>{
 },1000)
 
 
-console.log(a)
+console.log(a) // 1
