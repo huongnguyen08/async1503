@@ -6,6 +6,7 @@
   "author": "<huongnguyenak96@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.16.4",
     "request": "^2.88.0"
   }
 }
