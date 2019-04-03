@@ -32,7 +32,34 @@ function chia(a,b,fn){
         return fn(JSON.parse(body).result)
     })
 }
-nhan(2,3,(result,error)=>{
+chia(10,5,(result,error)=>{
     if(error) console.log(error.message)
     else console.log(result)
+})
+//(3+5)*4/2 => tinh dien tich hinh thang
+// cong(3,5,(tong,err)=>{
+//     if(err) return console.log(err)
+//     nhan(tong,4,(tich,err)=>{
+//         if(err) return console.log(err)
+//         chia(tich,2,(result,err)=>{
+//             if(err) return console.log(err)
+//             return console.log(result)
+//         })
+//     })
+// })
+function tinhDienTich(a,b,h,cb){
+    cong(a,b,(tong,err)=>{
+        if(err) return cb(null,err)
+        nhan(tong,h,(tich,err)=>{
+            if(err) return cb(null,err)
+            chia(tich,2,(result,err)=>{
+                if(err) return cb(null,err)
+                return cb(result)
+            })
+        })
+    })
+}
+tinhDienTich(3,5,4,(r,e)=>{
+    if(e) return console.log(e)
+    console.log(r)
 })
