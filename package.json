@@ -1,0 +1,11 @@
+{
+  "name": "async1503",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/huongnguyen08/async1503.git",
+  "author": "<huongnguyenak96@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}
