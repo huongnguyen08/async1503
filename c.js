@@ -6,6 +6,7 @@ const request = require('request');
 const URL = 'http://localhost:3000/';
 
 function nhan(a,b,fn){
+    //fn: 1s + 100s
     if(isNaN(a) || isNaN(b)) 
         return fn(null, new Error('Invalid parameter(s)'))
     const uri = `${URL}nhan/${a}/${b}`

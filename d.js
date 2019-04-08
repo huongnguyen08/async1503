@@ -6,6 +6,7 @@ const request = require('request');
 const URL = 'http://localhost:3000/';
 
 function cong(a,b){
+    // 10s + 100s 
     return new Promise((resolve, reject)=>{
         if(isNaN(a) || isNaN(b))
             return reject(new Error('Invalid parameter(s)'))
@@ -91,6 +92,24 @@ function tinhDienTich(a,b,h){
     .then(tong=>nhan(tong,h))
     .then(tich=>chia(tich,2))
 }
-tinhDienTich(3,5,4)
+// tinhDienTich(3,5,4)
+// .then(r=>console.log(r))
+// .catch(err=>console.log(err))
+
+async function tinhDienTich02(a,b,h){
+    const tong = await cong(a,b)
+    const tich = await nhan(tong,h)
+    const thuong = await chia(tich,2)
+    return thuong
+}
+// const r = tinhDienTich(2,3,4)
+// console.log(r)
+
+//  (3+5)*4/2 = (8*4)/2 = 32/2 = 16  :  1s/fn => 3s
+// 8*2 = 16 // 2s
+
+Promise.all([cong(3,5),chia(4,2)])
+.then(r=>nhan(r[0],r[1]))
 .then(r=>console.log(r))
-.catch(err=>console.log(err))
+.catch(e=>console.log(e))
+
