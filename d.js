@@ -71,19 +71,26 @@ function chia(a,b){
 // .catch(a=>console.log(a))
 
 
-cong(3,5)
-.then(tong=>{
-   return nhan(tong,4)
-})
-.then(tich=>chia(tich,2))
-.then(result=>console.log('KQ: '+result))
-.catch(err=>console.log('Error: '+err.message))
+// cong(3,5)
+// .then(tong=>{
+//    return nhan(tong,4)
+// })
+// .then(tich=>chia(tich,2))
+// .then(result=>console.log('KQ: '+result))
+// .catch(err=>console.log('Error: '+err.message))
 
 
-cong(3,4)
-.then(tong=>{
-    return 'a'
-})
+// cong(3,4)
+// .then(tong=>{
+//     return 'a'
+// })
+// .then(r=>console.log(r))
+
+function tinhDienTich(a,b,h){
+    return cong(a,b)
+    .then(tong=>nhan(tong,h))
+    .then(tich=>chia(tich,2))
+}
+tinhDienTich(3,5,4)
 .then(r=>console.log(r))
-
-// function tinhDienTich()
+.catch(err=>console.log(err))
